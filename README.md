@@ -48,4 +48,4 @@ This is an ecommerce website built using the MERN stack with integrated payment 
 
 ## Credits
 
-This website was built by [Your Name].
+This website was built by Dhruv.
