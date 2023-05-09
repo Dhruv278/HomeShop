@@ -50,6 +50,19 @@ sendMail({
     sendToken(user,200,res)
 })
 
+// OTP less login check 
+exports.loginWithOtpless=catchAsync(async(req,res,next)=>{
+    const email=req.body.email;
+    if(!email){
+        return next(new ErrorHandler('Email id is not there',404))
+    }
+    const user=await User.findOne({email})
+    if(!user){
+        return next(new ErrorHandler('User does not exists with this email id,Please Signup First'));
+    }
+    sendToken(user,200,res);
+
+})
 
 exports.loginUser=catchAsync(async(req,res,next)=>{
     const {email,password}=req.body;
